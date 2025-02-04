@@ -1,0 +1,208 @@
+   :root {
+       --primary: #6E7BF2;
+   }
+
+   body {
+       background: #27272B;
+       margin: 0;
+       font-family: Arial, sans-serif;
+       height: 100vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+
+   .loading {
+       position: center;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%) scale(2);
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+
+   .loading svg {
+       width: 50px;
+       /* Adjust size if needed */
+       height: 50px;
+   }
+
+   .loading svg polyline {
+       fill: none;
+       stroke-width: 2;
+       stroke-linecap: round;
+       stroke-linejoin: round;
+   }
+
+   .loading svg polyline#back {
+       stroke: rgba(255, 255, 255, 0.3);
+       /* Changed to white for visibility */
+   }
+
+   .loading svg polyline#front {
+       stroke: #00aaff;
+       /* Replace with your desired color */
+       stroke-dasharray: 12, 36;
+       /* Dash 12 & Gap 36 */
+       stroke-dashoffset: 48;
+       animation: dash 1s linear infinite;
+   }
+
+   @keyframes dash {
+       62.5% {
+           opacity: 0;
+           /* Adjust opacity fadeout */
+       }
+
+       100% {
+           stroke-dashoffset: 0;
+           /* Complete the dash cycle */
+       }
+   }
+
+   /* Optional Reset for better visibility across all screen sizes */
+   html,
+   body {
+       padding: 0;
+       margin: 0;
+       overflow: hidden;
+       /* Prevent scrolling */
+       box-sizing: border-box;
+   }
+
+   body {
+       font-family: Arial, sans-serif;
+       text-align: center;
+       margin: 0;
+       padding: 0;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       background-color: #f4f4f9;
+       box-sizing: border-box;
+   }
+
+   #container {
+       text-align: center;
+       background: white;
+       padding: 20px;
+       border-radius: 10px;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+       width: 90%;
+       max-width: 600px;
+   }
+
+   table {
+       width: 100%;
+       border-collapse: collapse;
+       margin: 10px 0;
+   }
+
+   table,
+   th,
+   td {
+       border: 1px solid black;
+       text-align: center;
+       padding: 8px;
+   }
+
+   th {
+       background-color: #3498db;
+       color: white;
+   }
+
+   td.loading {
+       color: #ffa500;
+       font-weight: bold;
+       animation: blink 1.5s infinite;
+   }
+
+   td.done {
+       color: #4caf50;
+       font-weight: bold;
+   }
+
+   td.done::after {
+       content: " ✔";
+       font-weight: bold;
+       margin-left: 8px;
+   }
+
+   td.passed {
+       color: #4caf50;
+       font-weight: bold;
+   }
+
+   td.fail {
+       color: #e74c3c;
+       font-weight: bold;
+   }
+
+   td.default {
+       color: #000;
+   }
+
+   @keyframes blink {
+
+       0%,
+       100% {
+           opacity: 1;
+       }
+
+       50% {
+           opacity: 0.5;
+       }
+   }
+
+   #buttonContainer {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       /* Centers the buttons vertically */
+       gap: 20px;
+       /* Adds space between buttons */
+       height: 100%;
+       /* Ensures the container takes up full height */
+   }
+
+   button,
+   a.button {
+       padding: 10px 20px;
+       border: none;
+       border-radius: 5px;
+       background-color: #007BFF;
+       color: white;
+       text-decoration: none;
+       text-align: center;
+       cursor: pointer;
+       font-size: 16px;
+       transition: background-color 0.3s;
+       width: 200px;
+       /* Ensures consistent width for buttons */
+   }
+
+   button:hover,
+   a.button:hover {
+       background-color: #0056b3;
+   }
+
+   #saveAndGoBack {
+       background-color: #3498db;
+   }
+
+   #reTest {
+       background-color: #f39c12;
+   }
+
+   #goToDatabase {
+       background-color: #e91e63;
+   }
+
+   #saveAndGoBack:hover,
+   #reTest:hover,
+   #goToDatabase:hover {
+       opacity: 0.8;
+   }

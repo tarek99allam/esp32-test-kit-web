@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test Results</title>
+    <link rel="stylesheet" type="text/css" href="/test-results.css">
+</head>
+
+<body>
+    <div id="container"
+        style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100vh;">
+        <h1>Test Results</h1>
+        <div id="resultsTable"></div>
+        <div class="loading">
+            <svg width="16px" height="12px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            </svg>
+        </div>
+        <div id="buttonContainer">
+            <button id="saveAndGoBack">Save and Go Back</button>
+            <button id="reTest">ReTEST</button>
+            <a id="goToDatabase" class="button" href="add_yours" target="_blank">Go to Database</a>
+        </div>
+    </div>
+    <script src="/test-results.js"></script>
+
+</body>
+
+</html>
